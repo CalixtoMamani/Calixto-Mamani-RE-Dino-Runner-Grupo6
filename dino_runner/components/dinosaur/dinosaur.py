@@ -1,6 +1,6 @@
 import pygame
 from dino_runner.utils.constants import RUNNING,DUCKING,JUMPING
-from pygame.sprite import Sprite
+from pygame.sprite import Sprite#Clase base para el movimiento de imagenes 
 
 class Dinosaur(Sprite):
     #Constantes
@@ -12,7 +12,7 @@ class Dinosaur(Sprite):
 
     def __init__(self):
         self.image = RUNNING[0]#Acceso a la imag de dino1,2
-        self.dino_rect = self.image.get_rect()#get tam del rect
+        self.dino_rect = self.image.get_rect()#get el espacio del rect del dino
         self.dino_rect.x = self.X_POS
         self.dino_rect.y = self.Y_POS
         self.step_index = 0
@@ -60,7 +60,7 @@ class Dinosaur(Sprite):
         self.step_index += 1
 
     def jump(self):
-        self.image = JUMPING#asinga un componente
+        self.image = JUMPING#asigna un componente
         if self.dino_jump:
             self.dino_rect.y -= self.jump_vel*4
             self.jump_vel -= 0.8
